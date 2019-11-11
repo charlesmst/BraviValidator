@@ -15,7 +15,7 @@ namespace App
             }
             if (!Regex.IsMatch(input, @"^[\{\}\[\]\(\)]*$"))
             {
-                throw new ArgumentException($"Bracket has invalid");
+                throw new ArgumentException($"Bracket has invalid characters");
 
             }
             var charStack = new Stack<char>();
