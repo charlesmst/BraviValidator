@@ -14,26 +14,26 @@ namespace AppTests
         [Fact]
         public void IsSequenceValidValidInputSimple1()
         {
-            Assert.Equal(true, InputTest("(){}[]"));
+            Assert.True( InputTest("(){}[]"));
         }
         [Fact]
         public void IsSequenceValidValidInputArranged1()
         {
             IValidator validator = new Validator();
-            Assert.Equal(true, InputTest("[{()}](){}"));
+            Assert.True( InputTest("[{()}](){}"));
         }
 
         [Fact]
         public void IsSequenceValidIncompleteInput()
         {
             IValidator validator = new Validator();
-            Assert.Equal(false, InputTest("[]{()"));
+            Assert.False( InputTest("[]{()"));
         }
         [Fact]
         public void IsSequenceValidOutOfOrder()
         {
             IValidator validator = new Validator();
-            Assert.Equal(false, InputTest("[{)]"));
+            Assert.False(InputTest("[{)]"));
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace AppTests
         public void IsSequenceValidAcceptEmptyString()
         {
             IValidator validator = new Validator();
-            Assert.Equal(true, InputTest(""));
+            Assert.True(InputTest(""));
         }
         [Fact]
         public void IsSequenceValidInputCantBeNull()
